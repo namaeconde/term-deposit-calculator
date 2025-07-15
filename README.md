@@ -13,17 +13,28 @@ and produces Final balance as output.
 
 ## Getting Started
 
-### Install dependencies
+### Prerequisites
+* Install Node.js 18.0 or higher
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/namaeconde/term-deposit-calculator.git
+```
+
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### Run the development server:
+### 3. Run the development server:
 
 ```bash
 npm run start
 ```
+
+### 4. Open your browser and navigate to http://localhost:3000/
+
 ## Built With
 
 * [TypeScript][typescriptlink] - typed programming language
