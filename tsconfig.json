@@ -1,11 +1,19 @@
 {
-  "include": ["./**/*"],
+  "include": ["./**/*", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "react-jsx",
     "target": "es2020",
-    "moduleResolution": "node"
-  }
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@utils/*": ["./src/utils/*"],
+      "@lib/*": ["./src/lib/*"]
+    },
+    "types": ["node"]
+  },
+  "exclude": ["node_modules"]
 }
