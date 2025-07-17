@@ -3,14 +3,16 @@ import { calculateCompoundBalance, calculateSimpleBalance } from './termDeposit'
 import { TermDepositInput } from "./types";
 import {
     MOCK_1K_DEPOSIT_MONTH_AT_MATURITY,
+    MOCK_1K_DEPOSIT_YEAR_AT_MATURITY
+} from "./__mocks__/SimpleDepositMock";
+import {
     MOCK_1K_DEPOSIT_YEAR_ANNUALLY,
-    MOCK_1K_DEPOSIT_YEAR_AT_MATURITY,
     MOCK_1K_DEPOSIT_YEAR_MONTHLY,
     MOCK_1K_DEPOSIT_YEAR_QUARTERLY,
     MOCK_25K_DEPOSIT_MONTH_ANNUALLY,
     MOCK_25K_DEPOSIT_MONTH_MONTHLY,
-    MOCK_25K_DEPOSIT_MONTH_QUARTERLY,
-} from "./__mocks__/SimpleDepositMock";
+    MOCK_25K_DEPOSIT_MONTH_QUARTERLY
+} from "./__mocks__/CompoundDepositMock";
 
 describe("calculateSimpleBalance", () => {
     const testCases = [
