@@ -11,13 +11,17 @@ export default function App() {
     const [finalBalance, setFinalBalance] = useState(0);
 
     useEffect(() => {
-        const input = {depositAmount, interestRate, investmentTerm, investmentTermFormat, interestPaidFrequency};
-        if (interestPaidFrequency === InterestPaidFrequency.AT_MATURITY) {
-            const balance = calculateSimpleBalance(input);
-            setFinalBalance(balance);
-        } else {
-            const balance = calculateCompoundBalance(input);
-            setFinalBalance(balance);
+        try {
+            const input = {depositAmount, interestRate, investmentTerm, investmentTermFormat, interestPaidFrequency};
+            if (interestPaidFrequency === InterestPaidFrequency.AT_MATURITY) {
+                const balance = calculateSimpleBalance(input);
+                setFinalBalance(balance);
+            } else {
+                const balance = calculateCompoundBalance(input);
+                setFinalBalance(balance);
+            }
+        } catch (e) {
+            alert(e.message);
         }
     }, [depositAmount, interestRate, investmentTerm, investmentTermFormat, interestPaidFrequency]);
 
