@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { InterestPaidFrequency, InvestmentTermFormat } from "./lib/calculator/types";
-import { calculateSimpleBalance } from "./lib/calculator/termDeposit";
+import { calculateCompoundBalance, calculateSimpleBalance } from "./lib/calculator/termDeposit";
 
 export default function App() {
     const [depositAmount, setDepositAmount] = useState(10000);
@@ -15,6 +15,9 @@ export default function App() {
         if (interestPaidFrequency === InterestPaidFrequency.AT_MATURITY) {
             const balance = calculateSimpleBalance(input);
             setFinalBalance(balance);
+        } else {
+            const balance = calculateCompoundBalance(input);
+            setFinalBalance(balance);
         }
     }, [depositAmount, interestRate, investmentTerm, investmentTermFormat, interestPaidFrequency]);
 
@@ -22,7 +25,7 @@ export default function App() {
         <div className="container">
             <h1>Term Deposit Calculator</h1>
             <div className="form">
-                <label>Deposit Amount</label>
+                <label>Deposit Amount in $</label>
                 <input type="number" value={depositAmount}
                        onChange={(e) => setDepositAmount(+e.target.value)}/>
                 <label>Interest Rate % p.a</label>
@@ -44,7 +47,7 @@ export default function App() {
                 </div>
                 <div>Interest Paid</div>
                 <div className="radio-button-group">
-                    <input type="radio" id="quarterly" name="interest-paid-frequency" value={InterestPaidFrequency.MONTHLY}
+                    <input type="radio" id="monthly" name="interest-paid-frequency" value={InterestPaidFrequency.MONTHLY}
                            checked={interestPaidFrequency === InterestPaidFrequency.MONTHLY}
                            onChange={() => setInterestPaidFrequency(InterestPaidFrequency.MONTHLY)}/>
                     <label htmlFor="monthly">MONTHLY</label>
