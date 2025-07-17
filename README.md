@@ -27,7 +27,13 @@ git clone https://github.com/namaeconde/term-deposit-calculator.git
 npm install
 ```
 
-### 3. Run the development server:
+### 3. Run tests
+
+```bash
+npm test
+```
+
+### 4. Run the development server:
 
 ```bash
 npm run start
