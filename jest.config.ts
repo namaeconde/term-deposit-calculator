@@ -1,11 +1,7 @@
-import { createDefaultPreset, pathsToModuleNameMapper } from "ts-jest";
-import tsconfig from './tsconfig.json';
-
+import { createDefaultPreset } from "ts-jest";
 
 const config: import('jest').Config = {
-  ...createDefaultPreset(),
-  roots: ['<rootDir>'],
-  moduleNameMapper: pathsToModuleNameMapper(tsconfig.compilerOptions.paths, { prefix: '<rootDir>/' })
+  ...createDefaultPreset()
 }
 
 export default config;

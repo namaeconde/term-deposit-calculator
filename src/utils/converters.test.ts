@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
-import { convertInterestRateInDecimal, convertInvestmentTermInYears } from "@utils/converters";
-import { InvestmentTermFormat } from "@lib/calculator/types";
+import { convertInterestRateInDecimal, convertInvestmentTermInYears } from "./converters";
+import { InvestmentTermFormat } from "../lib/calculator/types";
 
 describe("convertInvestmentTermInYears", () => {
     test('should convert term in month to year', () => {

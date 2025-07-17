@@ -1,4 +1,4 @@
-import { InvestmentTermFormat } from "@lib/calculator/types";
+import { InvestmentTermFormat } from "../lib/calculator/types";
 
 /**
  * Returns investment term in years.

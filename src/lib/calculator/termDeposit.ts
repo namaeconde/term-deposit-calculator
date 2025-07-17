@@ -1,5 +1,5 @@
 import { InterestPaidFrequency, TermDepositInput } from "./types";
-import { convertInterestRateInDecimal, convertInvestmentTermInYears } from "@utils/converters";
+import { convertInterestRateInDecimal, convertInvestmentTermInYears } from "../../utils/converters";
 
 /**
  * Calculates balance for simple interest paid at maturity using formula rounded to the nearest value:
@@ -8,7 +8,8 @@ import { convertInterestRateInDecimal, convertInvestmentTermInYears } from "@uti
  * @param input
  * @returns balance
  */
-export function calculateSimpleBalance({ depositAmount, interestRate, investmentTerm, investmentTermFormat, interestPaidFrequency }: TermDepositInput): number {
+export function calculateSimpleBalance({ depositAmount, interestRate, investmentTerm, investmentTermFormat,
+                                           interestPaidFrequency }: TermDepositInput): number {
     if (interestPaidFrequency !== InterestPaidFrequency.AT_MATURITY) {
         throw new Error("Invalid Interest Paid Frequency, expected AT_MATURITY value.");
     }
