@@ -27,9 +27,9 @@ export function convertInvestmentTermInYears(investmentTerm: number, investmentT
  * @param interestRate - value of interest rate in percentage
  */
 export function convertInterestRateInDecimal(interestRate: number): number {
-    if (isNaN(interestRate) || interestRate <= 0) {
-        throw new Error("Invalid interest rate, cannot have zero or negative value.")    ;
+    if (isNaN(interestRate) || interestRate < 0) {
+        throw new Error("Invalid interest rate, cannot have negative value.")    ;
     }
 
-    return +((interestRate/100).toFixed(3));
+    return interestRate/100;
 }

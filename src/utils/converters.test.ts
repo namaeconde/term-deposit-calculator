@@ -31,8 +31,11 @@ describe("convertInvestmentTermInYears", () => {
 
 describe("convertInterestRateInDecimal", () => {
     const testCases = [
-        [1, 0.01],  // [interestRate, interestInDecimal]
-        [1.1, 0.011],
+        // [interestRate, interestInDecimal]
+        [0.25, 0.0025],
+        [1, 0.01],
+        [1.1, 0.011000000000000001],
+        [1.15, 0.0115],
         [10, 0.1],
         [100, 1],
         [310, 3.1],
@@ -47,8 +50,6 @@ describe("convertInterestRateInDecimal", () => {
         // WHEN
         // THEN
         expect(() =>  convertInterestRateInDecimal(-3))
-            .toThrow("Invalid interest rate, cannot have zero or negative value");
-        expect(() =>  convertInterestRateInDecimal(0))
-            .toThrow("Invalid interest rate, cannot have zero or negative value");
+            .toThrow("Invalid interest rate, cannot have negative value");
     });
 });
