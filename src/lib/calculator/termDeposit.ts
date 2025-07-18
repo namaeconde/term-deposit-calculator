@@ -28,7 +28,7 @@ export function calculateSimpleBalance({ depositAmount, interestRate, investment
  * compoundingFactor = 4 if interestPaidFrequency is "quarterly"
  * compoundingFactor = 1 if interestPaidFrequency is "annually"
  *
- * balance = depositAmount * ((1 + (interestRate/100) / compoundingFactor)^(compoundingFactor * investmentTerm))
+ * balance = depositAmount * ((1 + (interestRate/100) / compoundingFactor)**(compoundingFactor * investmentTerm))
  *
  * @param input
  * @returns balance
